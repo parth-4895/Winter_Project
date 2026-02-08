@@ -1,8 +1,14 @@
 const express =  require('express');
 const roomRouter = express.Router();
-const roomController = require('../controllers/Filectrl');
+const roomController = require('../controllers/Roomctrl');
 
-roomRouter.post('/upload', roomController.uploadFile);
-roomRouter.get('/download', roomController.downloadFile);
+console.log('== This is the roomController: ', roomController);
+console.log('roomController:', roomController);
+console.log('createRoom:', roomController.createRoom);
+console.log('joinRoom:', roomController.joinRoom);
+
+
+roomRouter.post('/createRoom', roomController.createRoom);
+roomRouter.get('/joinRoom', roomController.joinRoom);
 
 module.exports = roomRouter;

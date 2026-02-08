@@ -15,19 +15,19 @@ app.use('/room', roomRouter);
 app.use('/message', messRouter);
 app.use('/file', fileRouter);
 
+const PORT = 3000;
 
+const Server = app.listen(PORT, ()=>{
+  console.log('Server started on PORT: ', 3000 );
+})
 
 const gun = Gun({
   web: Server,
-  file: 'data/gun',
+  file: 'data/gun/',
   peers: ['https://gun-manhattan.herokuapp.com/gun']
 })
 
-const PORT = 3000;
 
-app.listen(PORT, ()=>{
-  console.log('Server started on PORT: ', 3000 );
-})
 
 global.gun = gun;
 console.log('Gun initialised');
