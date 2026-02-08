@@ -99,5 +99,6 @@
     "unpipe": "^1.0.0",
     "vary": "^1.1.2",
     "wrappy": "^1.0.2"
-  }
+  },
+  "devDependencies": {}
 }
